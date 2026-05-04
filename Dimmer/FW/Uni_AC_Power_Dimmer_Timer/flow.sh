@@ -12,5 +12,5 @@ sudo -E ./waf prerequisites
 ./waf build upload --app=01
 
 # Debug with USB2UART dongle
-./waf debug_log --port=0
+./waf log --port=0
 # Exit on Ctrl+A Ctrl+X

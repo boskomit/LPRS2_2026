@@ -50,7 +50,7 @@ def options(opt):
 	opt.add_option(
 		'--port',
 		dest = 'port',
-		default = None,
+		default = 0,
 		help = 'Programmer port number or full file name i.e. dev file ' +
 			'(2, /dev/ttyUSB2, COM2)'
 	)
@@ -141,9 +141,8 @@ def upload(ctx):
 			source = a + '.hex'
 		)
 
-def debug_log(ctx):
-	if ctx.options.port:
-		p = expand_port(ctx.options.port)
-		ctx.exec_command2('picocom -b 9600 --imap=lfcrlf {}'.format(p))
+def log(ctx):
+	p = expand_port(ctx.options.port)
+	ctx.exec_command2('picocom -b 9600 --imap=lfcrlf {}'.format(p))
 
 ###############################################################################

@@ -4,7 +4,7 @@
 
 #include "common.hpp"
 
-#define PERCENT 50
+#define PERCENT 75
 #define HZ 50
 
 //////////////
@@ -17,7 +17,7 @@
 
 #define TOP (F_CPU/((HZ)*2*8))
 
-#define THRESHOLD_A (TOP*PERCENT/100)
+#define THRESHOLD_A (TOP*(100-PERCENT)/100)
 #define THRESHOLD_B (THRESHOLD_A+10)
 
 //////////////
